@@ -1,0 +1,34 @@
+var dot = function(x,y){
+  this.x=x;
+  this.y=y;
+  };
+
+var vector=function(dot1,dot2){
+  this.dot1=dot1;
+  this.dot2=dot2;
+  this.minus=function(){
+    var diffX=(this.dot1.x-this.dot2.x);
+    var diffY=(this.dot1.y-this.dot2.y);
+    return new dot(diffX,diffY);
+  };
+  this.plus=function(){
+    var sumX=(this.dot1.x+this.dot2.x);
+    var sumY=(this.dot1.y+this.dot2.y);
+    return new dot(sumX,sumY);
+  };
+};
+
+var myPlace=new dot(23,1);
+var yourPlace=new dot(6,6);
+
+
+var myVector=new vector(myPlace,yourPlace);
+var VectorDif=myVector.minus();
+var VectorSum=myVector.plus();
+console.log(VectorDif);
+console.log(VectorSum);
+
+
+
+
+
